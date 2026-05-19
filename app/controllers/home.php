@@ -1,7 +1,10 @@
 <?php
+require_once '../app/middleware.php';
+
 class home {
     public function index() {
-        echo "Day la trang chu";
+        Middleware::checkAuth();
+        require_once '../app/views/auth/Dashboard.php';
     }
 }
 ?>

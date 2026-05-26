@@ -1,45 +1,44 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thêm Mới Sinh Viên</title>
+    <title>Thêm sinh viên</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; padding: 30px; display: flex; justify-content: center; }
-        .form-container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); width: 100%; max-width: 500px; }
-        h2 { margin-top: 0; color: #007bff; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; font-weight: 500; margin-bottom: 5px; color: #333; }
-        .form-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
-        .form-group input:focus { border-color: #007bff; outline: none; }
-        .btn-group { display: flex; justify-content: space-between; margin-top: 20px; }
-        .btn-submit { background: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
-        .btn-submit:hover { background: #218838; }
-        .btn-back { background: #6c757d; color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px; text-align: center; }
-        .btn-back:hover { background: #5a6268; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .logout-btn {
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .logout-btn:hover {
+            background-color: #da190b;
+        }
     </style>
 </head>
 <body>
-    <div class="form-container">
-        <h2>Thêm Mới Sinh Viên</h2>
-        <form action="" method="POST">
-            <div class="form-group">
-                <label>Mã Sinh Viên:</label>
-                <input type="text" name="masv" placeholder="Nhập mã sinh viên..." required>
-            </div>
-            <div class="form-group">
-                <label>Họ và Tên:</label>
-                <input type="text" name="hoten" placeholder="Nhập họ và tên..." required>
-            </div>
-            <div class="form-group">
-                <label>Lớp:</label>
-                <input type="text" name="lop" placeholder="Nhập lớp..." required>
-            </div>
-            <div class="btn-group">
-                <a href="index.php?url=sinhvien/index" class="btn-back">Quay Lại</a>
-                <button type="submit" class="btn-submit">Lưu Thông Tin</button>
-            </div>
-        </form>
+    <div class="header">
+        <h2>Thêm sinh viên</h2>
+        <a href="/PMNM_68PM34_NguyenQuangSang_0023468/public/index.php?url=home/logout" class="logout-btn">Đăng xuất</a>
     </div>
+    <nav>
+        <a href="/PMNM_68PM34_NguyenQuangSang_0023468/public/index.php?url=home/index">Trang chủ</a> | 
+        <a href="/PMNM_68PM34_NguyenQuangSang_0023468/public/index.php?url=sinhvien/index">Danh sách sinh viên</a>
+    </nav>
+    <br>
+    <p>Đây là trang tạo sinh viên</p>
 </body>
 </html>

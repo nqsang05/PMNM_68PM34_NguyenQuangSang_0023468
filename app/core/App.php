@@ -7,7 +7,11 @@ class App
 
     public function __construct()
     {
-        $urlProcessed = $this->UrlProcess();  //mảng url đã được xử lý
+        require_once '../app/middleware.php';
+        $middleware = new middleware();
+        $middleware->checklogin();
+        
+        $urlProcessed = $this->UrlProcess();
         
         if (isset($urlProcessed[0])) {
             if (file_exists('../app/controllers/' . $urlProcessed[0] . '.php')) {
@@ -17,7 +21,7 @@ class App
         }
         
         require_once '../app/controllers/' . $this->controller . '.php';
-        $this->controller = new $this->controller; //tạo đối tượng controller
+        $this->controller = new $this->controller;
         
         if (isset($urlProcessed[1])) {
             if (method_exists($this->controller, $urlProcessed[1])) {

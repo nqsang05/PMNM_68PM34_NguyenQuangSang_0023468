@@ -1,10 +1,15 @@
 <?php
-require_once '../app/middleware.php';
-
 class home {
-    public function index() {
-        Middleware::checkAuth();
-        require_once '../app/views/auth/Dashboard.php';
+    function index() {
+        require_once '../app/views/home/index.php';
+    }
+
+    public function login() {
+        require_once '../app/views/home/Login.php';
+    }
+
+    public function logout() {
+        require_once '../app/views/home/Logout.php';
     }
 }
 ?>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh sách sinh viên</title>
+    <title><?php echo $title; ?></title>
     <style>
         table {
             border-collapse: collapse;
@@ -40,32 +40,35 @@
 <body>
     <div class="header">
         <h1><?php echo $title; ?></h1>
-        <a href="/PMNM_68PM34_NguyenQuangSang_0023468/public/index.php?url=home/logout" class="logout-btn">Đăng xuất</a>
-    </div>
-    <nav>
-        <a href="/PMNM_68PM34_NguyenQuangSang_0023468/public/index.php?url=home/index">Trang chủ</a> | 
-        <a href="/PMNM_68PM34_NguyenQuangSang_0023468/public/index.php?url=sinhvien/create">Thêm sinh viên</a>
-    </nav>
-    <br>
-    <table>
-        <thead>
+        <table>
             <tr>
-                <th>ID</th>
-                <th>MSSV</th>
-                <th>Họ tên</th>
-                <th>Giới tính</th>
+            <th>STT</th>
+            <th>MSSV</th>
+            <th>Họ Tên</th>
+            <th>Giới Tính</th>
+            <th>Thao tác</th>
             </tr>
-        </thead>
-        <tbody>
-            <?php foreach($sinhvien as $sv): ?>
-                <tr>
-                    <td><?php echo $sv['id']; ?></td>
-                    <td><?php echo $sv['MSSV']; ?></td>
-                    <td><?php echo $sv['HoTen']; ?></td>
-                    <td><?php echo $sv['GioiTinh']; ?></td>
-                </tr>
+            <?php foreach ($sinhviens as $index => $sinhvien) : ?>
+            <tr>
+                <td><?php echo $index + 1; ?></td>
+                <td><?php echo $sinhvien['MSSV']; ?></td>
+                <td><?php echo $sinhvien['HoTen']; ?></td>
+                <td><?php echo $sinhvien['GioiTinh']; ?></td>
+                <td>
+                <a href="/sinhvien/edit/<?php echo $sinhvien['id']; ?>" class="btn btn-primary">Sửa</a>
+                <a href="/sinhvien/delete/<?php echo $sinhvien['id']; ?>" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa sinh viên này không?')">Xóa</a>
+                </td>
+            </tr>
             <?php endforeach; ?>
-        </tbody>
-    </table>
+        </table>
+        <div>
+            <?php
+            $pageSize = 5;
+            for ($i = 1; $i <= $totalPages; $i++) {
+            $offset = ($i - 1) * $pageSize;
+            echo "<a href='/sinhvien/index/$pageSize/$offset' class='btn btn-success' style='margin-right: 5px; margin-top: 5px;'>$i</a>";
+            }
+            ?>
+        </div>
 </body>
 </html>

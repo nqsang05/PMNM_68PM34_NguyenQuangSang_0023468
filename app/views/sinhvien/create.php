@@ -30,15 +30,19 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <h2>Thêm sinh viên</h2>
-        <a href="/PMNM_68PM34_NguyenQuangSang_0023468/public/index.php?url=home/logout" class="logout-btn">Đăng xuất</a>
-    </div>
-    <nav>
-        <a href="/PMNM_68PM34_NguyenQuangSang_0023468/public/index.php?url=home/index">Trang chủ</a> | 
-        <a href="/PMNM_68PM34_NguyenQuangSang_0023468/public/index.php?url=sinhvien/index">Danh sách sinh viên</a>
-    </nav>
-    <br>
+    <h1> Thêm sinh viên </h1>
+    <form action="/sinhvien/store" method="POST">
+        <label for="MSSV">Mã sinh viên</label>
+        <input type="text" name="mssv" id="MSSV">
+        <br>
+        <label for="HoTen">Họ tên</label>
+        <input type="text" name="hoten" id="HoTen">
+        <br>
+        <label for="GioiTinh">Giới tính</label>
+        <input type="text" name="gioitinh" id="GioiTinh">
+        <br>
+        <input type="submit" value="Thêm">
+    </form>
     <p>Đây là trang tạo sinh viên</p>
 </body>
 </html>

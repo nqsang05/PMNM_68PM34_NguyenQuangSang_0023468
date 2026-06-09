@@ -39,7 +39,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>Danh sách sinh viên</h1>
+        <h1><?php echo $title; ?></h1>
         <a href="/PMNM_68PM34_NguyenQuangSang_0023468/public/index.php?url=home/logout" class="logout-btn">Đăng xuất</a>
     </div>
     <nav>

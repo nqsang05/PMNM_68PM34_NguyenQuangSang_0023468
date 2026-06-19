@@ -19,6 +19,9 @@
     <label for="GioiTinh">Giới tính:</label>
     <input type="text" id="GioiTinh" name="GioiTinh" value="<?php echo htmlspecialchars($sinhvien['GioiTinh']); ?>" required><br><br>
 
+    <label for="malop">Mã lớp:</label>
+    <input type="text" id="malop" name="malop" value="<?php echo htmlspecialchars($sinhvien['malop'] ?? ''); ?>"><br><br>
+
     <input type="submit" class="btn btn-warning" value="Cập nhật">
     <a href="/sinhvien/index" style="margin-left: 10px;" class="btn btn-danger">Hủy bỏ</a>
   </form>

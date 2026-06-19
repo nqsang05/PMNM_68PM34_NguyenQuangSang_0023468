@@ -24,9 +24,10 @@ class sinhvien extends Controller
       $MSSV = $_POST['MSSV'];
       $HoTen = $_POST['HoTen'];
       $GioiTinh = $_POST['GioiTinh'];
+      $malop = isset($_POST['malop']) ? $_POST['malop'] : null;
 
       $sinhvienModel = $this->model('sinhvienModel');
-      $result = $sinhvienModel->create($MSSV, $HoTen, $GioiTinh);
+      $result = $sinhvienModel->create($HoTen, $GioiTinh, $MSSV, $malop);
       if ($result) {
         header("Location: /sinhvien/index");
         exit();
@@ -58,9 +59,10 @@ class sinhvien extends Controller
       $MSSV = $_POST['MSSV'];
       $HoTen = $_POST['HoTen'];
       $GioiTinh = $_POST['GioiTinh'];
+      $malop = isset($_POST['malop']) ? $_POST['malop'] : null;
 
       $sinhvienModel = $this->model('sinhvienModel');
-      $result = $sinhvienModel->update($id, $MSSV, $HoTen, $GioiTinh);
+      $result = $sinhvienModel->update($id, $MSSV, $HoTen, $GioiTinh, $malop);
 
       if ($result) {
         header("Location: /sinhvien/index");

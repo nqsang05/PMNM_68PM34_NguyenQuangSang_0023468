@@ -47,6 +47,7 @@
             <th>MSSV</th>
             <th>Họ Tên</th>
             <th>Giới Tính</th>
+            <th>Mã lớp</th>
             <th>Thao tác</th>
             </tr>
             <?php foreach ($sinhviens as $index => $sinhvien) : ?>
@@ -55,6 +56,7 @@
                 <td><?php echo $sinhvien['MSSV']; ?></td>
                 <td><?php echo $sinhvien['HoTen']; ?></td>
                 <td><?php echo $sinhvien['GioiTinh']; ?></td>
+                <td><?php echo $sinhvien['malop'] ?? 'N/A'; ?></td>
                 <td>
                 <a href="/sinhvien/edit/<?php echo $sinhvien['id']; ?>" class="btn btn-primary">Sửa</a>
                 <a href="/sinhvien/delete/<?php echo $sinhvien['id']; ?>" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa sinh viên này không?')">Xóa</a>

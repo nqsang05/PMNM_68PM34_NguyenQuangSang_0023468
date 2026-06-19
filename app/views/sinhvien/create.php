@@ -33,13 +33,16 @@
     <h1> Thêm sinh viên </h1>
     <form action="/sinhvien/store" method="POST">
         <label for="MSSV">Mã sinh viên</label>
-        <input type="text" name="mssv" id="MSSV">
+        <input type="text" name="MSSV" id="MSSV">
         <br>
         <label for="HoTen">Họ tên</label>
-        <input type="text" name="hoten" id="HoTen">
+        <input type="text" name="HoTen" id="HoTen">
         <br>
         <label for="GioiTinh">Giới tính</label>
-        <input type="text" name="gioitinh" id="GioiTinh">
+        <input type="text" name="GioiTinh" id="GioiTinh">
+        <br>
+        <label for="malop">Mã lớp</label>
+        <input type="text" name="malop" id="malop">
         <br>
         <input type="submit" value="Thêm">
     </form>
